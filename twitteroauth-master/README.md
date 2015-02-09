@@ -7,5 +7,5 @@ Overview
 =============
 
 1. Build TwitterOAuth object using client credentials using https://github.com/abraham/twitteroauth.git
-2. If new tweets are discovered on user timeline, load onto application and index into JSON file
-3. User inputs queries, search engine uses index to retrieve information relevant to queries
+2. New tweets discovered on user timeline are handled and indexed by index.php and stored in index.json
+3. When user inputs queries, search.php implements a simple search engine which traverses index.json to retrieve relevant information
