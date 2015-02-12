@@ -268,7 +268,18 @@ function tfidf($tf, $idf) {
 function getFirstNResults($ranks, $n){
 	$first_n = [];
 	while ($n > 0 && current ($ranks)){
-		$first_n[] = current ($ranks);
+		if (!current ($ranks)['location']){
+			$loc = 'No location specified!';
+		} else {
+			$loc = current ($ranks)['location']; 
+		}
+		$first_n[] = array('Tweet' => current ($ranks)['tweet'],
+						   'Tweet ID' => current ($ranks)['tweet_id'],
+						   'Rank' => current ($ranks)['rank'],
+						   'Positivity' => current ($ranks)['positive'],
+						   'Location' => $loc
+					 );
+		
 		$n--;
 		next ($ranks);
 	}

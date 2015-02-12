@@ -4,6 +4,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <style type="text/css">
+body {
+    background: #87CEEB url("images/twitter.png") no-repeat right top;
+    margin-right: 200px;
+}
+pre {
+    color: #191970;
+}
+pre.thick {
+    font-weight: 900;
+}
+img {
+	border-width: 0
+}
+
+* {
+	font-family: 'Helvetica', sans-serif;
+}
 </style>
 <script src="http://maps.googleapis.com/maps/api/js"></script>
 <script>
@@ -23,17 +40,32 @@ google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 </head>
 <body>
-
+	<div>
 	<p>
 		<pre>
-		You searched for: <?php print_r($raw); ?>
-		Location: <?php echo $place ?>
+		<strong>You searched for:</strong> <?php print_r($raw); ?>
+		<strong>Location:</strong> <?php echo $place ?>
 		<?php print_r($time); ?>	
       </pre>
 	</p>
-	<pre>
-        <?php print_r($content); ?>
-      </pre>
+	
+	<hr />
+	</div>
+	<p>
+		<pre>
+		<u><strong>Results:</strong></u> <br><br>
+        <?php foreach ($content as $key => $tweet){
+        		echo '<strong>Result #: </strong> ' . $key; echo "<br>";
+        		echo '<strong>Tweet:</strong> ' . $tweet['Tweet']; echo "<br>";
+        		echo '<strong>Tweet ID:</strong> ' . $tweet['Tweet ID']; echo "<br>";
+        		echo '<strong>Rank:</strong> ' . $tweet['Rank']; echo "<br>";
+        		echo '<strong>Positvity:</strong> ' . $tweet['Positivity']; echo "<br>";
+        		echo '<strong>Location:</strong> ' . $tweet['Location']; echo "<br>";
+        		echo "<br><br>";
+        	  }
+		?>
+		</pre>
+      </p>
 	<div id="googleMap" style="width: 500px; height: 380px;"></div>
 
 </body>

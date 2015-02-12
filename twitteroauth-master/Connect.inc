@@ -6,15 +6,21 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <style type="text/css">
 body {
-    background-color: #b0c4de url("images/twitter.png") no-repeat right top;
+    background: #87CEEB url("images/twitter.png") no-repeat right top;
     margin-right: 200px;
+}
+h2 {
+    color: #191970;
+}
+h2.thick {
+    font-weight: bold;
 }
 img {
 	border-width: 0
 }
 
 * {
-	font-family: 'Lucida Grande', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 }
 </style>
 </head>

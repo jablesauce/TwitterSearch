@@ -5,18 +5,34 @@
 <title>My Search</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <style type="text/css">
+body {
+    background: #87CEEB url("images/twitter.png") no-repeat right top;
+    margin-right: 200px;
+}
+h2 {
+    color: #191970;
+}
+h2.thick {
+    font-weight: bold;
+}
+form {
+    color: #191970;
+}
+form.thicker {
+    font-weight: 900;
+}
 img {
 	border-width: 0
 }
 
 * {
-	font-family: 'Lucida Grande', sans-serif;
+	font-family: 'Helvetica', sans-serif;
 }
 </style>
 </head>
 <body>
 	<div>
-		<h2>Welcome to My Search</h2>
+		<h2>Welcome to TwitterSearch</h2>
 
 		<p>
 			Enter your search query in the box below. If you are having issues
@@ -28,14 +44,14 @@ img {
 
 	<p>
 		<form action="search.php" method="get">
-			Enter search query:
+			<strong>Enter search query:</strong>
 			<br> <input type="text" name="query"> <br> <input type="submit"
 						value="Search">
 		
 		</form>
 		<pre>
-        <?php print_r($content); ?>
-        <?php print_r($time); ?>
+        <strong><?php print_r($content); ?></strong>
+        <strong><?php print_r($time); ?></strong>
       </pre>
 	</p>
 	
