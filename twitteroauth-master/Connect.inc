@@ -5,6 +5,10 @@
 <title>My Search</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <style type="text/css">
+body {
+    background-color: #b0c4de url("images/twitter.png") no-repeat right top;
+    margin-right: 200px;
+}
 img {
 	border-width: 0
 }
@@ -16,7 +20,7 @@ img {
 </head>
 <body>
 	<div>
-		<h2>Welcome to My Search</h2>
+		<h2>Welcome to TwitterSearch</h2>
 
 		<p>
 			Click the button below to sign into Twitter by logging in your Twitter credentials.  
