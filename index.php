@@ -1,9 +1,9 @@
 <?php
 session_start ();
-require_once ('./twitteroauth/twitteroauth.php');
-require_once ('./config.php');
-include ('nlp/stop_words.php');
-include ('nlp/acronyms.php');
+require_once ('twitteroauth-master/twitteroauth/twitteroauth.php');
+require_once ('twitteroauth-master/config.php');
+include ('twitteroauth-master/nlp/stop_words.php');
+include ('twitteroauth-master/nlp/acronyms.php');
 
 set_time_limit ( 300 );
 
@@ -11,7 +11,7 @@ set_time_limit ( 300 );
 
 /* If access tokens are not available redirect to connect page. */
 if (empty ( $_SESSION ['access_token'] ) || empty ( $_SESSION ['access_token'] ['oauth_token'] ) || empty ( $_SESSION ['access_token'] ['oauth_token_secret'] )) {
-	header ( 'Location: ./clearsessions.php' );
+	header ( 'Location: twitteroauth-master/clearsessions.php' );
 }
 
 /* Get user access tokens out of the session. */
@@ -62,7 +62,7 @@ function getContent($connection, $user_handle, $n) {
 }
 
 function decodeIndex() {
-	$string = file_get_contents ( INDEX_PATH );
+	$string = file_get_contents ( 'twitteroauth-master/'.INDEX_PATH );
 	if ($string) {
 		$json_index = json_decode ( $string, true );
 	} else {
@@ -338,7 +338,7 @@ function sortIndex($json_index) {
 function encodeIndex($json_index) {
 	$json = json_encode ( $json_index, JSON_FORCE_OBJECT | JSON_PRETTY_PRINT );
 	
-	$index = fopen ( INDEX_PATH, 'w' );
+	$index = fopen ( 'twitteroauth-master/'.INDEX_PATH, 'w' );
 	fwrite ( $index, $json );
 	fclose ( $index );
 	
@@ -370,7 +370,7 @@ function lookup($array, $key, $val) {
 }
 
 function getMostRecentTweet() {
-	$file = fopen ( 'latest.txt', 'r' );
+	$file = fopen ( 'twitteroauth-master/latest.txt', 'r' );
 	$most_recent = fgets ( $file );
 	if (! $most_recent) {
 		$most_recent = 0;
@@ -381,7 +381,7 @@ function getMostRecentTweet() {
 }
 
 function updateMostRecentTweet($latest_id) {
-	$file = fopen ( 'latest.txt', 'w' );
+	$file = fopen ( 'twitteroauth-master/latest.txt', 'w' );
 	fwrite ( $file, $latest_id . PHP_EOL );
 	fclose ( $file );
 }

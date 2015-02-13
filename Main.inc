@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <style type="text/css">
 body {
-    background: #87CEEB url("images/twitter.png") no-repeat right top;
+    background: #87CEEB url("twitteroauth-master/images/twitter.png") no-repeat right top;
     margin-right: 200px;
 }
 h2 {
@@ -43,7 +43,7 @@ img {
 	</div>
 
 	<p>
-		<form action="search.php" method="get">
+		<form action="twitteroauth-master/search.php" method="get">
 			<strong>Enter search query:</strong>
 			<br> <input type="text" name="query"> <br> <input type="submit"
 						value="Search">
