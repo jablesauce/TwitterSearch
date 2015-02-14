@@ -1,4 +1,5 @@
 <?php
+//session_save_path(home/users/web/b2940/ipg.uomtwittersearchnet/cgi-bin/tmp);
 session_start ();
 require_once ('twitteroauth/twitteroauth.php');
 require_once ('config.php');
@@ -16,6 +17,8 @@ if (empty ( $_SESSION ['access_token'] ) || empty ( $_SESSION ['access_token'] [
 
 /* Get user access tokens out of the session. */
 $access_token = $_SESSION ['access_token'];
+
+
 
 /* Create a TwitterOauth object with consumer/user tokens. */
 $connection = new TwitterOAuth ( CONSUMER_KEY, CONSUMER_SECRET, $access_token ['oauth_token'], $access_token ['oauth_token_secret'] );
@@ -386,5 +389,5 @@ function updateMostRecentTweet($latest_id) {
 	fclose ( $file );
 }
 
-include ('Main.inc');
+include ('index.inc');
 ?>

@@ -6,6 +6,7 @@
  */
 
 /* Start session and load lib */
+//session_save_path(home/users/web/b2940/ipg.uomtwittersearchnet/cgi-bin/tmp);
 session_start();
 require_once('twitteroauth/twitteroauth.php');
 require_once('config.php');

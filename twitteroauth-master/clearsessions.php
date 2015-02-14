@@ -5,6 +5,7 @@
  */
  
 /* Load and clear sessions */
+//session_save_path(home/users/web/b2940/ipg.uomtwittersearchnet/cgi-bin/tmp);
 session_start();
 session_destroy();
  
