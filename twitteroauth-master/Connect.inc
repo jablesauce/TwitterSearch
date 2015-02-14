@@ -30,7 +30,7 @@ img {
 
 		<p>
 			Click the button below to sign into Twitter by logging in your Twitter credentials.  
-			If you are having issues try <a href='../clearsessions.php'>clearing your session</a>.
+			If you are having issues try <a href='./clearsessions.php'>clearing your session</a>.
 		</p>
 
 		<hr />
