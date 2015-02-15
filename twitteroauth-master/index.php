@@ -33,7 +33,7 @@ $connection = new TwitterOAuth ( CONSUMER_KEY, CONSUMER_SECRET, $access_token ['
 
 $user_handle = 'AngeloDalli';
 
-$timeline = getContent ( $connection, $user_handle, 1 );
+//$timeline = getContent ( $connection, $user_handle, 1 );
 
 //$latest_id = $timeline [0]->id_str;
 //$most_recent = getMostRecentTweet ();
