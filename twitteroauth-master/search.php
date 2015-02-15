@@ -27,33 +27,32 @@ $t_start = microtime(true); // start searching
 $raw = $_GET ['query'];
 $query = processQuery ( $raw );
 
-//$index = decodeIndex ();
-//$n = getIndexSize ( $index );
+$index = decodeIndex ();
+$n = getIndexSize ( $index );
 
 // get intersection set of query and index
-//$intersection = intersect ( $query, $index );
-//if (! empty ( $intersection )) {
+$intersection = intersect ( $query, $index );
+if (! empty ( $intersection )) {
 	// build vector space of tweets
-//	$space = buildSpace ( $intersection, $query );
+	$space = buildSpace ( $intersection, $query );
 	
 	// rank tweets appropriately
-//	$ranks = rankTweets ( $space, $query, $n );
+	$ranks = rankTweets ( $space, $query, $n );
 	
-//	$content = getFirstNResults($ranks, 10);
+	$content = getFirstNResults($ranks, 10);
 	
 	// get highest available location
-//	$loc = getTopLocation ( $ranks );
-//	$place = setLocationSessionVars ( $loc );
+	$loc = getTopLocation ( $ranks );
+	$place = setLocationSessionVars ( $loc );
 	
 	$t_end = microtime(true); // end searching
-$content = 'HELLO';
 	$time = 'Total search time: ' . ($t_end - $t_start)/60;	// total searching time
-//} else {
-//	$content =  "No relevant tweets found!";
-//	$place = 'No location specified';
-//	$t_end = microtime(true); // end searching
-//	$time = 'Total search time: ' . 0 . ' seconds';	// total searching time
-//}
+} else {
+	$content =  "No relevant tweets found!";
+	$place = 'No location specified';
+	$t_end = microtime(true); // end searching
+	$time = 'Total search time: ' . 0 . ' seconds';	// total searching time
+}
 
 /////////////////////// FUNCTIONS //////////////////////////////////////////////
 
@@ -66,7 +65,7 @@ function processQuery($raw) {
 	$query = array_count_values ( $query );
 	return $query;
 }
-/**
+
 function getIndexSize($index) {
 	if (empty ( $_SESSION ['index_size'] )) {
 		$_SESSION ['index_size'] = countIndex ( $index );
@@ -319,6 +318,6 @@ function setLocationSessionVars($loc) {
 	}
 	return $place;
 }
-**/
+
 include ('Ranked.inc');
 ?>
