@@ -34,31 +34,31 @@ $connection = new TwitterOAuth ( CONSUMER_KEY, CONSUMER_SECRET, $access_token ['
 
 $user_handle = 'AngeloDalli';
 
-//$timeline = getContent ( $connection, $user_handle, 1 );
+$timeline = getContent ( $connection, $user_handle, 1 );
 
-//$latest_id = $timeline [0]->id_str;
-//$most_recent = getMostRecentTweet ();
+$latest_id = $timeline [0]->id_str;
+$most_recent = getMostRecentTweet ();
 
-//if ($latest_id > $most_recent) {
+if ($latest_id > $most_recent) {
 	$t_start = microtime(true); // start indexing
-	//$timeline = getContent ( $connection, $user_handle, 200 );
-	//$json_index = decodeIndex ();
-	//$json_index = updateIndex ( $timeline, $connection, $user_handle, $json_index, $most_recent );
-	//$json_index = sortIndex ( $json_index );
-	//$json = encodeIndex ( $json_index );
-	//updateMostRecentTweet ( $latest_id );
-	//$_SESSION ['index_size'] = countIndex ( $json_index );
+	$timeline = getContent ( $connection, $user_handle, 200 );
+	$json_index = decodeIndex ();
+	$json_index = updateIndex ( $timeline, $connection, $user_handle, $json_index, $most_recent );
+	$json_index = sortIndex ( $json_index );
+	$json = encodeIndex ( $json_index );
+	updateMostRecentTweet ( $latest_id );
+	$_SESSION ['index_size'] = countIndex ( $json_index );
 	$t_end = microtime(true); // finish indexing
-	$content = 'New tweets indexed! Number of tweets in index: ';// . $_SESSION ['index_size'];
+	$content = 'New tweets indexed! Number of tweets in index: ' . $_SESSION ['index_size'];
 	// total indexing time
 	$time = 'Total time of indexing: ' . ($t_end - $t_start)/60 . ' seconds';
-//} else {
-//	$content = 'No new tweets indexed!';
-//	$time = '';
-//}
+} else {
+	$content = 'No new tweets indexed!';
+	$time = '';
+}
 
 /////////////////////// FUNCTIONS //////////////////////////////////////////////
-/**
+
 function getContent($connection, $user_handle, $n) {
 	$content = $connection->get ( 'statuses/user_timeline', array (
 			'screen_name' => $user_handle,
@@ -391,6 +391,6 @@ function updateMostRecentTweet($latest_id) {
 	fwrite ( $file, $latest_id . PHP_EOL );
 	fclose ( $file );
 }
-**/
+
 include ('index.inc');
 ?>
