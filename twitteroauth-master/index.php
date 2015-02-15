@@ -46,9 +46,9 @@ if ($latest_id > $most_recent) {
 	//$json_index = sortIndex ( $json_index );
 	//$json = encodeIndex ( $json_index );
 	//updateMostRecentTweet ( $latest_id );
-	$_SESSION ['index_size'] = countIndex ( $json_index );
+	//$_SESSION ['index_size'] = countIndex ( $json_index );
 	$t_end = microtime(true); // finish indexing
-	$content = 'New tweets indexed! Number of tweets in index: ' . $_SESSION ['index_size'];
+	$content = 'New tweets indexed! Number of tweets in index: ';// . $_SESSION ['index_size'];
 	// total indexing time
 	$time = 'Total time of indexing: ' . ($t_end - $t_start)/60 . ' seconds';
 } else {
