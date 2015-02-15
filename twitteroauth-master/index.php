@@ -57,7 +57,7 @@ $user_handle = 'AngeloDalli';
 //}
 
 /////////////////////// FUNCTIONS //////////////////////////////////////////////
-
+/**
 function getContent($connection, $user_handle, $n) {
 	$content = $connection->get ( 'statuses/user_timeline', array (
 			'screen_name' => $user_handle,
@@ -390,6 +390,6 @@ function updateMostRecentTweet($latest_id) {
 	fwrite ( $file, $latest_id . PHP_EOL );
 	fclose ( $file );
 }
-
+**/
 include ('index.inc');
 ?>
