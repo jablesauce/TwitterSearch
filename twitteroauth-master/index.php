@@ -35,10 +35,10 @@ $user_handle = 'AngeloDalli';
 
 $timeline = getContent ( $connection, $user_handle, 1 );
 
-$latest_id = $timeline [0]->id_str;
-$most_recent = getMostRecentTweet ();
+//$latest_id = $timeline [0]->id_str;
+//$most_recent = getMostRecentTweet ();
 
-if ($latest_id > $most_recent) {
+//if ($latest_id > $most_recent) {
 	$t_start = microtime(true); // start indexing
 	//$timeline = getContent ( $connection, $user_handle, 200 );
 	//$json_index = decodeIndex ();
@@ -51,10 +51,10 @@ if ($latest_id > $most_recent) {
 	$content = 'New tweets indexed! Number of tweets in index: ';// . $_SESSION ['index_size'];
 	// total indexing time
 	$time = 'Total time of indexing: ' . ($t_end - $t_start)/60 . ' seconds';
-} else {
-	$content = 'No new tweets indexed!';
-	$time = '';
-}
+//} else {
+//	$content = 'No new tweets indexed!';
+//	$time = '';
+//}
 
 /////////////////////// FUNCTIONS //////////////////////////////////////////////
 
