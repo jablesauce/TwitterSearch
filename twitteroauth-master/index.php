@@ -7,6 +7,7 @@ require_once ('twitteroauth/twitteroauth.php');
 require_once ('config.php');
 include ('nlp/stop_words.php');
 include ('nlp/acronyms.php');
+echo true;
 
 set_time_limit ( 300 );
 
