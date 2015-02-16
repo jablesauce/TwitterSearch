@@ -36,14 +36,14 @@ img {
 
 		<p>
 			Enter your search query in the box below. If you are having issues
-			try <a href='./clearsessions.php'>clearing your session</a>.
+			try <a href='../clearsessions.php'>clearing your session</a>.
 		</p>
 
 		<hr />
 	</div>
 
 	<p>
-		<form action="search.php" method="get">
+		<form action="twitteroauth-master/search.php" method="get">
 			<strong>Enter search query:</strong>
 			<br> <input type="text" name="query"> <br> <input type="submit"
 						value="Search">
