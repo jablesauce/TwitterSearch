@@ -36,26 +36,26 @@ $user_handle = 'AngeloDalli';
 
 $timeline = getContent ( $connection, $user_handle, 1 );
 
-//$latest_id = $timeline [0]->id_str;
-//$most_recent = getMostRecentTweet ();
+$latest_id = $timeline [0]->id_str;
+$most_recent = getMostRecentTweet ();
 
-//if ($latest_id > $most_recent) {
+if ($latest_id > $most_recent) {
 	$t_start = microtime(true); // start indexing
-	//$timeline = getContent ( $connection, $user_handle, 200 );
-	//$json_index = decodeIndex ();
-	//$json_index = updateIndex ( $timeline, $connection, $user_handle, $json_index, $most_recent );
-	//$json_index = sortIndex ( $json_index );
-	//$json = encodeIndex ( $json_index );
-	//updateMostRecentTweet ( $latest_id );
-	//$_SESSION ['index_size'] = countIndex ( $json_index );
+	$timeline = getContent ( $connection, $user_handle, 200 );
+	$json_index = decodeIndex ();
+	$json_index = updateIndex ( $timeline, $connection, $user_handle, $json_index, $most_recent );
+	$json_index = sortIndex ( $json_index );
+	$json = encodeIndex ( $json_index );
+	updateMostRecentTweet ( $latest_id );
+	$_SESSION ['index_size'] = countIndex ( $json_index );
 	$t_end = microtime(true); // finish indexing
 	$content = 'New tweets indexed! Number of tweets in index: ' . $_SESSION ['index_size'];
 	// total indexing time
 	$time = 'Total time of indexing: ' . ($t_end - $t_start)/60 . ' seconds';
-//} else {
-	//$content = 'No new tweets indexed!';
-	//$time = '';
-//}
+} else {
+	$content = 'No new tweets indexed!';
+	$time = '';
+}
 
 /////////////////////// FUNCTIONS //////////////////////////////////////////////
 
@@ -350,7 +350,7 @@ function encodeIndex($json_index) {
 	
 	return $json;
 }
-/**
+
 function countIndex($json_index) {
 	$tweets = [ ];
 	$count = 0;
@@ -364,7 +364,7 @@ function countIndex($json_index) {
 	}
 	return $count;
 }
-**/
+
 function lookup($array, $key, $val) {
 	foreach ( $array as $item ) {
 		if (isset ( $item [$key] ) && $item [$key] == $val) {
