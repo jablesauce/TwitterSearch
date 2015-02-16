@@ -36,8 +36,8 @@ $user_handle = 'AngeloDalli';
 
 $timeline = getContent ( $connection, $user_handle, 1 );
 
-$latest_id = $timeline [0]->id_str;
-$most_recent = getMostRecentTweet ();
+//$latest_id = $timeline [0]->id_str;
+//$most_recent = getMostRecentTweet ();
 
 //if ($latest_id > $most_recent) {
 	$t_start = microtime(true); // start indexing
@@ -47,7 +47,7 @@ $most_recent = getMostRecentTweet ();
 	//$json_index = sortIndex ( $json_index );
 	//$json = encodeIndex ( $json_index );
 	//updateMostRecentTweet ( $latest_id );
-	$_SESSION ['index_size'] = countIndex ( $json_index );
+	//$_SESSION ['index_size'] = countIndex ( $json_index );
 	$t_end = microtime(true); // finish indexing
 	$content = 'New tweets indexed! Number of tweets in index: ' . $_SESSION ['index_size'];
 	// total indexing time
@@ -374,7 +374,7 @@ function lookup($array, $key, $val) {
 		}
 	}
 }
-**/
+
 function getMostRecentTweet() {
 	$file = fopen ( 'latest.txt', 'r' );
 	$most_recent = fgets ( $file );
@@ -391,6 +391,6 @@ function updateMostRecentTweet($latest_id) {
 	fwrite ( $file, $latest_id . PHP_EOL );
 	fclose ( $file );
 }
-
+**/
 include ('index.inc');
 ?>
