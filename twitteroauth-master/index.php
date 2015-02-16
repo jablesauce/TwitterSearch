@@ -66,7 +66,7 @@ function getContent($connection, $user_handle, $n) {
 	) );
 	return $content;
 }
-/**
+
 function decodeIndex() {
 	$string = file_get_contents ( INDEX_PATH );
 	if ($string) {
@@ -350,7 +350,7 @@ function encodeIndex($json_index) {
 	
 	return $json;
 }
-
+/**
 function countIndex($json_index) {
 	$tweets = [ ];
 	$count = 0;
@@ -364,7 +364,7 @@ function countIndex($json_index) {
 	}
 	return $count;
 }
-
+**/
 function lookup($array, $key, $val) {
 	foreach ( $array as $item ) {
 		if (isset ( $item [$key] ) && $item [$key] == $val) {
@@ -391,6 +391,6 @@ function updateMostRecentTweet($latest_id) {
 	fwrite ( $file, $latest_id . PHP_EOL );
 	fclose ( $file );
 }
-**/
+
 include ('index.inc');
 ?>
