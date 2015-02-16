@@ -350,7 +350,7 @@ function encodeIndex($json_index) {
 	
 	return $json;
 }
-**/
+
 function countIndex($json_index) {
 	$tweets = [ ];
 	$count = 0;
@@ -364,7 +364,7 @@ function countIndex($json_index) {
 	}
 	return $count;
 }
-/**
+
 function lookup($array, $key, $val) {
 	foreach ( $array as $item ) {
 		if (isset ( $item [$key] ) && $item [$key] == $val) {
