@@ -54,7 +54,8 @@ google.maps.event.addDomListener(window, 'load', initialize);
 	<p>
 		<pre>
 		<u><strong>Results:</strong></u> <br><br>
-        <?php foreach ($content as $key => $tweet){
+        <?php if ($flag == 1){
+        	foreach ($content as $key => $tweet){
         		echo '<strong>Result #: </strong> ' . $key; echo "<br>";
         		echo '<strong>Tweet:</strong> ' . $tweet['Tweet']; echo "<br>";
         		echo '<strong>Tweet ID:</strong> ' . $tweet['Tweet ID']; echo "<br>";
@@ -62,7 +63,10 @@ google.maps.event.addDomListener(window, 'load', initialize);
         		echo '<strong>Positvity:</strong> ' . $tweet['Positivity']; echo "<br>";
         		echo '<strong>Location:</strong> ' . $tweet['Location']; echo "<br>";
         		echo "<br><br>";
-        	  }
+        	}        	
+        } else {
+        	print_r($content);
+        }        		
 		?>
 		</pre>
       </p>
