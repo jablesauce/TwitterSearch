@@ -2,7 +2,7 @@
 require_once ('./twitteroauth/twitteroauth.php');
 require_once ('./config.php');
 
-include ('../index.php');
+include ('./index.php');
 
 set_time_limit ( 300 );
 

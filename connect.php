@@ -19,14 +19,6 @@ if (CONSUMER_KEY === '' || CONSUMER_SECRET === '' ||
 /* Build an image link to start the redirect process. */
 $content = '<a href="./redirect.php"><img src="./images/lighter.png" alt="Sign in with Twitter"/></a>';
 
-/**
- if (isset($_SESSION['access_token'])){
- $content =  $_SESSION['access_token'];
- } else {
- //$content = 'yo';
- }
- **/
-
 /* Include HTML to display on the page. */
 include ('Connect.inc');
 
