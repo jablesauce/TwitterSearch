@@ -7,7 +7,6 @@ require_once ('twitteroauth-master/twitteroauth/twitteroauth.php');
 require_once ('twitteroauth-master/config.php');
 include ('twitteroauth-master/nlp/stop_words.php');
 include ('twitteroauth-master/nlp/acronyms.php');
-echo true;
 
 set_time_limit ( 300 );
 
