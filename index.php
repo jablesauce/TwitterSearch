@@ -3,10 +3,10 @@
 ini_set('display_errors',1);
 error_reporting(E_ALL);
 session_start ();
-require_once ('twitteroauth/twitteroauth.php');
-require_once ('config.php');
-include ('nlp/stop_words.php');
-include ('nlp/acronyms.php');
+require_once ('twitteroauth-master/twitteroauth/twitteroauth.php');
+require_once ('twitteroauth-master/config.php');
+include ('twitteroauth-master/nlp/stop_words.php');
+include ('twitteroauth-master/nlp/acronyms.php');
 echo true;
 
 set_time_limit ( 300 );
