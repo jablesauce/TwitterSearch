@@ -1,7 +1,7 @@
 <?php
 //session_save_path(home/users/web/b2940/ipg.uomtwittersearchnet/cgi-bin/tmp);
-ini_set('display_errors',1);
-error_reporting(E_ALL);
+//ini_set('display_errors',1);
+//error_reporting(E_ALL);
 session_start ();
 require_once ('./twitteroauth/twitteroauth.php');
 require_once ('./config.php');
