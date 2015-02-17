@@ -61,7 +61,7 @@ google.maps.event.addDomListener(window, 'load', initialize);
         		echo '<strong>Tweet ID:</strong> ' . $tweet['Tweet ID']; echo "<br>";
         		echo '<strong>Rank:</strong> ' . $tweet['Rank']; echo "<br>";
         		echo '<strong>Positvity:</strong> ' . $tweet['Positivity']; echo "<br>";
-        		echo '<strong>Location:</strong> ' . $tweet['Location']; echo "<br>";
+        		echo '<strong>Location:</strong> ' . $tweet['Location']['place']; echo "<br>";
         		echo "<br><br>";
         	}        	
         } else {

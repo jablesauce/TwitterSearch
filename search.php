@@ -49,7 +49,7 @@ if (! empty ( $intersection )) {
 	$time = 'Total search time: ' . ($t_end - $t_start)/60;	// total searching time
 	$flag = 1;
 } else {
-	flag = 0;
+	$flag = 0;
 	$content =  "No relevant tweets found!";
 	$place = 'No location specified';
 	$t_end = microtime(true); // end searching
