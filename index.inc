@@ -36,7 +36,7 @@ img {
 
 		<p>
 			Enter your search query in the box below. If you are having issues
-			try <a href='../clearsessions.php'>clearing your session</a>.
+			try <a href='twitteroauth-master/clearsessions.php'>clearing your session</a>.
 		</p>
 
 		<hr />
