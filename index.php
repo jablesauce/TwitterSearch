@@ -28,10 +28,10 @@ $connection = new TwitterOAuth ( CONSUMER_KEY, CONSUMER_SECRET, $access_token ['
 ///////////////////////////////////////////////////////////////////////////
 
 ///// UNCOMMENT BELOW TO AUTOMATICALLY SPECIFY CURRENTLY LOGGED IN USER
-//$user = $connection->get('account/verify_credentials');
-//$user_handle = $user->screen_name;
+$user = $connection->get('account/verify_credentials');
+$user_handle = $user->screen_name;
 
-$user_handle = 'AngeloDalli';
+//$user_handle = 'AngeloDalli';
 
 $timeline = getContent ( $connection, $user_handle, 1 );
 
